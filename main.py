@@ -1083,7 +1083,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         CR = raw_text3
 
-    await editable.edit("**Enter 𝐏𝐖/𝐂𝐖/𝐂𝐏 Working Token For 𝐌𝐏𝐃 𝐔𝐑𝐋 or send /d**")
+    await editable.edit("** 🌚 /d 🌝**")
     try:
         input4: Message = await bot.listen(editable.chat.id, timeout=20)
         raw_text4 = input4.text
@@ -1160,8 +1160,6 @@ async def txt_handler(bot: Client, m: Message):
             Vxy = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","")
             url = "https://" + Vxy
             link0 = "https://" + Vxy
-
-
 
             name1 = links[i][0].replace("(", "[").replace(")", "] ").replace("_", "").replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").replace(" vip", "⚝" ).strip()
             name = f'⚝ {name1[:90]}'
@@ -1583,12 +1581,12 @@ async def text_handler(bot: Client, m: Message):
              #   url = mpd
               #  keys_string = " ".join([f"--key {key}" for key in keys])
 
-          #  elif "classplusapp.com/drm/" in url:
-         #       url = f"https://drmapijion-botupdatevip.vercel.app/api?url={url}&token={raw_text4}"
-               # url = 'https://dragoapi.vercel.app/classplus?link=' + url
-        #        mpd, keys = helper.get_mps_and_keys(url)
-        #        url = mpd
-       #         keys_string = " ".join([f"--key {key}" for key in keys])
+            elif "classplusapp.com/drm/" in url:
+                url = f"https://drmapijion-botupdatevip.vercel.app/api?url={url}&token={raw_text4}"
+                url = 'https://dragoapi.vercel.app/classplus?link=' + url
+                mpd, keys = helper.get_mps_and_keys(url)
+                url = mpd
+                keys_string = " ".join([f"--key {key}" for key in keys])
 
             elif "classplusapp" in url:
                 signed_api = f"https://cpapi-rjbs-1l0p.onrender.com/extract_keys?url={url}@bots_updatee&user_id={7735386939}"
