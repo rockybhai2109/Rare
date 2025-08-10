@@ -1030,7 +1030,7 @@ async def txt_handler(bot: Client, m: Message):
         
     await editable.edit(f"**Enter Batch Name or send /d**")
     try:
-        input1: Message = await bot.listen(editable.chat.id, timeout=20)
+        input1: Message = await bot.listen(editable.chat.id, timeout=10)
         raw_text0 = input1.text
         await input1.delete(True)
     except asyncio.TimeoutError:
@@ -1044,7 +1044,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit("__**Enter resolution or Video Quality (`144`, `240`, `360`, `480`, `720`, `1080`)**__")
     try:
-        input2: Message = await bot.listen(editable.chat.id, timeout=20)
+        input2: Message = await bot.listen(editable.chat.id, timeout=10)
         raw_text2 = input2.text
         await input2.delete(True)
     except asyncio.TimeoutError:
@@ -1070,7 +1070,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit(f"**Enter the Credit Name or send /d\n\n<blockquote><b>Format:</b>\n🔹Send __Admin__ only for caption\n🔹Send __Admin,filename__ for caption and file...Separate them with a comma (,)</blockquote>**")
     try:
-        input3: Message = await bot.listen(editable.chat.id, timeout=20)
+        input3: Message = await bot.listen(editable.chat.id, timeout=10)
         raw_text3 = input3.text
         await input3.delete(True)
     except asyncio.TimeoutError:
@@ -1102,7 +1102,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit("**If you want to topic wise uploader : send `yes` or send /d**\n\n<blockquote><b>Topic fetch from (bracket) in title</b></blockquote>")
     try:
-        input5: Message = await bot.listen(editable.chat.id, timeout=20)
+        input5: Message = await bot.listen(editable.chat.id, timeout=10)
         raw_text5 = input5.text
         await input5.delete(True)
     except asyncio.TimeoutError:
@@ -1139,16 +1139,16 @@ async def txt_handler(bot: Client, m: Message):
 
     try:
         if raw_text == "1":
-            batch_message = await bot.send_message(chat_id=channel_id, text=f"<blockquote><b>🎯Target Batch : {b_name}</b></blockquote>")
+            batch_message = await bot.send_message(chat_id=channel_id, text=f"<blockquote><b>💎 𝐁𝐚𝐭𝐜𝐡 : {b_name}</b></blockquote>")
             if "/d" not in raw_text7:
-                await bot.send_message(chat_id=m.chat.id, text=f"<blockquote><b><i>🎯Target Batch : {b_name}</i></b></blockquote>\n\n🔄 Your Task is under processing, please check your Set Channel📱. Once your task is complete, I will inform you 📩")
+                await bot.send_message(chat_id=m.chat.id, text=f"<blockquote><b><i>💎 Target Batch : {b_name}</i></b></blockquote>\n\n🔄 Your Task is under processing, please check your Set Channel📱. Once your task is complete, I will inform you 📩")
                 await bot.pin_chat_message(channel_id, batch_message.id)
                 message_id = batch_message.id
                 pinning_message_id = message_id + 1
                 await bot.delete_messages(channel_id, pinning_message_id)
         else:
              if "/d" not in raw_text7:
-                await bot.send_message(chat_id=m.chat.id, text=f"<blockquote><b><i>🎯Target Batch : {b_name}</i></b></blockquote>\n\n🔄 Your Task is under processing, please check your Set Channel📱. Once your task is complete, I will inform you 📩")
+                await bot.send_message(chat_id=m.chat.id, text=f"<blockquote><b><i>💎 Target Batch : {b_name}</i></b></blockquote>\n\n🔄 Your Task is under processing, please check your Set Channel📱. Once your task is complete, I will inform you 📩")
     except Exception as e:
         None
            
@@ -1250,8 +1250,8 @@ async def txt_handler(bot: Client, m: Message):
                     f"**⚝ 𝐕ɪᴅᴇⱺ 𝐈𝐃 : {str(count).zfill(3)}**\n"
                     f"**╰━━━━━━━━━━━╯**\n\n"
                     f"🎥 <b>Tɪᴛʟᴇ: {name1} 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝.mp4</b>\n"
-                    f"├── <b>Quality:</b> {res}\n\n"
-                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ:</b> {b_name}\n\n"
+                    f"🎀 <b>Quality: {res}</b>\n\n"
+                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ: {b_name}</b>\n\n"
                     f">𖣐 <b>𝗫𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆:</b> {CR}"
               )
 
@@ -1260,7 +1260,7 @@ async def txt_handler(bot: Client, m: Message):
                     f"**📙 𝐏𝐃𝐅 𝐈𝐃 : {str(count).zfill(3)}**\n"
                     f"**╰━━━━━━━━━━━╯**\n\n"
                     f"📁 <b>Tɪᴛʟᴇ: {name1} 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝.pdf</b>\n\n"
-                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ:</b> {b_name}\n\n"
+                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ: {b_name}</b>\n\n"
                     f">𖣐 <b>𝗫𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆:</b> {CR}"
                )
 
@@ -1269,7 +1269,7 @@ async def txt_handler(bot: Client, m: Message):
                     f"**📦 𝐅𝐢𝐥𝐞 𝐈𝐃 : {str(count).zfill(3)}**\n"
                     f"**╰━━━━━━━━━━━╯**\n\n"
                     f"🗂️ <b>Tɪᴛʟᴇ: {name1} 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝.zip</b>\n\n"
-                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ:</b> {b_name}\n\n"
+                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ: {b_name}</b>\n\n"
                     f">𖣐 <b>𝗫𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆:</b> {CR}"
                    
                 )
@@ -1279,7 +1279,7 @@ async def txt_handler(bot: Client, m: Message):
                     f"**🖼️ 𝐈𝐌𝐀𝐆𝐄 𝐈𝐃 : {str(count).zfill(3)}**\n"
                     f"**╰━━━━━━━━━━━╯</a>**\n\n"
                     f"<b>Tɪᴛʟᴇ: {name1} 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝.jpg</b>\n\n"
-                    f"📚 <b>𝐂ⱺᴜʀꜱᴇ:</b> {b_name}\n\n"
+                    f"💎 <b>𝐂ⱺᴜʀꜱᴇ: {b_name}</b>\n\n"
                     f">𖣐 <b>𝗫𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆:</b> {CR}"
                 )
 
@@ -1288,7 +1288,7 @@ async def txt_handler(bot: Client, m: Message):
                     f"**🎵 𝐀𝐔𝐃𝐈𝐎 𝐈𝐃 : {str(count).zfill(3)}**\n"
                     f"**╰━━━━━━━━━━━╯**\n\n"
                     f"🎧 <b>Tɪᴛʟᴇ: {name1} 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝.mp3</b>\n\n"
-                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ:</b> {b_name}\n\n"
+                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ: {b_name}</b>\n\n"
                     f">𖣐 <b>𝗫𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆:</b> {CR}"
                 )
 
@@ -1297,7 +1297,7 @@ async def txt_handler(bot: Client, m: Message):
                     f"**🌐 𝐇𝐓𝐌𝐋 𝐈𝐃 : {str(count).zfill(3)}**\n"
                     f"**╰━━━━━━━━━━━╯**\n\n"
                     f"📝 <b>Tɪᴛʟᴇ: {name1} 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝.html</b>\n\n"
-                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ:</b> {b_name}\n\n"
+                    f">💎 <b>𝐂ⱺᴜʀꜱᴇ: {b_name}</b>\n\n"
                     f">𖣐 <b>𝗫𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆:</b> {CR}"
                 )
             
