@@ -1784,7 +1784,7 @@ def notify_owner():
     for user_id in all_users:
         data = {
             "chat_id": user_id,
-            "text": "𝐁𝐨𝐭 𝐔𝐩𝐝𝐚𝐭𝐞𝐝 & 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐮𝐥𝐥𝐲 ✅\n\n Hehe"
+            "text": "𝐁𝐨𝐭 𝐔𝐩𝐝𝐚𝐭𝐞𝐝 & 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐮𝐥𝐥𝐲 ✅\n\n Aah Shit! Here We Go Again. 💀"
         }
         requests.post(url, data=data)
 
