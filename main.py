@@ -1555,7 +1555,7 @@ async def text_handler(bot: Client, m: Message):
             url = Vxy
 
             name1 = links.replace("(", "[").replace(")", "]").replace("_", "").replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
-            name = f'{name1[:60]}'
+            name = f'{name1[:90]}'
             
             if "visionias" in url:
                 async with ClientSession() as session:
